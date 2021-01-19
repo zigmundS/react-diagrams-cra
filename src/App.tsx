@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import './App.css';
 import createEngine, {
   DiagramModel,
@@ -8,7 +8,11 @@ import createEngine, {
 import { CanvasWidget } from '@projectstorm/react-canvas-core';
 import { DemoCanvasWidget } from './DemoCanvasWidget';
 
-export default () => {
+interface OwnProps { }
+
+type Props = OwnProps;
+
+const App: FC<Props> = (props) => {
   //1) setup the diagram engine
   var engine = createEngine();
 
@@ -46,3 +50,5 @@ export default () => {
     </DemoCanvasWidget>
   );
 };
+
+export default App;
